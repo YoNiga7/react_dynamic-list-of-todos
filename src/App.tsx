@@ -19,14 +19,14 @@ export interface Filter {
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [sort, setSort] = useState<Filter>({ status: 'all', title: '' });
-  const [loading, setLoading] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     getTodos()
       .then(setTodos)
-      .finally(() => setLoading(false));
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (
@@ -41,7 +41,7 @@ export const App: React.FC = () => {
             </div>
 
             <div className="block">
-              {loading ? (
+              {isloading ? (
                 <Loader />
               ) : (
                 <TodoList

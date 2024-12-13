@@ -30,9 +30,9 @@ export const TodoFilter: React.FC<Props> = ({ onFilter }) => {
   };
 
   const statusOptions = [
-    { value: 'all', lable: 'All' },
-    { value: 'active', lable: 'Active' },
-    { value: 'completed', lable: 'Completed' },
+    { value: 'all', label: 'All' },
+    { value: 'active', label: 'Active' },
+    { value: 'completed', label: 'Completed' },
   ];
 
   return (
